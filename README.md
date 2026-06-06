@@ -38,7 +38,7 @@ CREATE TABLE netflix (
 ```
 ### Business Questions and Solutions 
 
-**Question 1: Count the Number of Movies vs TV Shows**
+**Question 1:Count the Number of Movies vs TV Shows**
 ```sql
 SELECT 
 	type_1,
@@ -46,7 +46,7 @@ SELECT
 FROM netflix 
 GROUP BY 1;
 ```
-**Question 2: Find the Most Common Rating for Movies and TV Shows**
+**Question 2:Find the Most Common Rating for Movies and TV Shows**
 ```sql
 WITH CTE AS (
 		SELECT 
@@ -63,7 +63,7 @@ fr_rating
 FROM CTE 
 WHERE rnk = 1;
 ```
-**Question 3: List All Movies Released in a Specific Year (e.g., 2020)**
+**Question 3:List All Movies Released in a Specific Year (e.g., 2020)**
 ```sql
 SELECT * 
 FROM netflix 
@@ -83,7 +83,7 @@ WHERE countries is not null
 ORDER BY no_content DESC 
 LIMIT 5;
 ```
-**Question 5:  Identify the Longest Movie**
+**Question 5:Identify the Longest Movie**
 ```sql
 SELECT *
 FROM netflix 
@@ -91,17 +91,17 @@ WHERE type_1 = 'Movie' AND duration IS NOT NULL
 ORDER BY SPLIT_PART(duration, ' ', 1) :: INT DESC
 LIMIT 1;
 ```
-**Question 6:  Find Content Added in the Last 5 Years**
+**Question 6:Find Content Added in the Last 5 Years**
 ```sql
 SELECT *
 FROM netflix 
 WHERE TO_DATE(date_added, 'month, DD, YYYY') >= CURRENT_DATE - INTERVAL '5 years';
 ```
-**Question 7: Find All Movies/TV Shows by Director 'Rajiv Chilaka'**
+**Question 7:Find All Movies/TV Shows by Director 'Rajiv Chilaka'**
 ```sql
 SELECT * 
 FROM netflix 
-WHERE director ILIKE '%Rajiv Chilaka%'
+WHERE director ILIKE '%Rajiv Chilaka%';
 ```
 **Question 8: List All TV Shows with More Than 5 Seasons**
 ```sql
@@ -178,3 +178,9 @@ FROM netflix
 GROUP BY 1 
 ORDER  BY 2  DESC;
 ```
+## Findings and Conclusion
+- **Content Distribution:** The dataset contains a diverse range of movies and TV shows with varying ratings and genres.
+- **Common Ratings:** Insights into the most common ratings provide an understanding of the content's target audience.
+- **Geographical Insights:** The top countries and the average content releases by India highlight regional content distribution.
+- **Content Categorization:** Categorizing content based on specific keywords helps in understanding the nature of content available on Netflix.
+This analysis provides a comprehensive view of Netflix's content and can help inform content strategy and decision-making.
