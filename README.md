@@ -36,3 +36,30 @@ CREATE TABLE netflix (
 		description VARCHAR (500)
 );
 ```
+### Business Questions and Solutions 
+
+**Question 1: Count the Number of Movies vs TV Shows**
+```sql
+SELECT 
+	type_1,
+	COUNT(*)
+FROM netflix 
+GROUP BY 1
+```
+**Question 2: Find the Most Common Rating for Movies and TV Shows**
+```sql
+WITH CTE AS (
+		SELECT 
+		type_1,
+		rating,
+		COUNT(*) as fr_rating, 
+		RANK () OVER (PARTITION BY type_1 ORDER BY COUNT(*) DESC) AS rnk 
+		FROM netflix 
+		GROUP BY 1, 2)
+SELECT 
+type_1,
+rating, 
+fr_rating
+FROM CTE 
+WHERE rnk = 1;
+```
