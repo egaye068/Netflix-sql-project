@@ -185,3 +185,6 @@ ORDER  BY 2  DESC;
 - **Content Categorization:** Categorizing content based on specific keywords helps in understanding the nature of content available on Netflix.
   
 This analysis provides a comprehensive view of Netflix's content and can help inform content strategy and decision-making.
+
+## Author - Ebroima Gaye 
+This project is part of my portfolio, showcasing the SQL skills essential for data analyst roles.
