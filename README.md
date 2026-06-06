@@ -186,5 +186,5 @@ ORDER  BY 2  DESC;
   
 This analysis provides a comprehensive view of Netflix's content and can help inform content strategy and decision-making.
 
-## Author - Ebroima Gaye 
+## Author - Ebrima Gaye 
 This project is part of my portfolio, showcasing the SQL skills essential for data analyst roles.
